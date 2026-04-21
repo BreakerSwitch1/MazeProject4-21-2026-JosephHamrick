@@ -1,6 +1,8 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        MazeReader mr = new MazeReader();
+        mr.read_file();
         boolean minotaur_stalks = use_minotaur();
 
     }
