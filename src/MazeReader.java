@@ -16,6 +16,14 @@ public class MazeReader {
                     }else{
                         if(tokens[i].equals("O")){
                             System.out.println("Space");
+                        }else{
+                            if(tokens[i].equals("E")){
+                                System.out.println("Exit");
+                            }else{
+                                if(tokens[i].equals("S")){
+                                    System.out.println("Start");
+                                }
+                            }
                         }
                     }
                 }
