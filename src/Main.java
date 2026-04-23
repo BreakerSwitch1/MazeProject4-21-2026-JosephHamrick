@@ -5,14 +5,14 @@ public class Main {
         MazeReader mr = new MazeReader();
         mr.read_file();
         mz = new Maze();
-        boolean minotaur_stalks = use_minotaur();
-        mz.setup(minotaur_stalks);
+        //boolean minotaur_stalks = use_minotaur();
+        mz.setup();
 
     }
 
     public static boolean use_minotaur(){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Should the minotaur stalk the maze? (y/n) ");
+        //System.out.println("Should the minotaur stalk the maze? (y/n) ");
         String input_string = sc.next();
         return(input_string.equals("y"));
     }
