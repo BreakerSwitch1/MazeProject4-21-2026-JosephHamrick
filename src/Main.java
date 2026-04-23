@@ -5,8 +5,8 @@ public class Main {
         MazeReader mr = new MazeReader();
         mr.read_file();
         mz = new Maze();
-        boolean minotaur_stalks = use_minotaur();
-        mz.setup(minotaur_stalks);
+        //boolean minotaur_stalks = use_minotaur();
+        mz.setup();
 
     }
 

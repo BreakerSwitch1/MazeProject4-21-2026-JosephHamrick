@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.io.*;
 public class MazeReader {
     private Space[] spaces;
+    private int rows;
+    private int collums;
 
     public void read_file(){
         try{
@@ -29,7 +31,7 @@ public class MazeReader {
                             }
                         }
                     }
-                }
+                }collums++;
 
             }
         }catch (java.io.FileNotFoundException ex){}

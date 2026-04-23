@@ -1,3 +1,6 @@
 public class SpaceID {
-    //int[][] id = new int[rows][cols];
+    public int rows;
+    public int cols;
+
+    int[][] id = new int[rows][cols];
 }
