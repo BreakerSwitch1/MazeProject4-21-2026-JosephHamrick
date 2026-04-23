@@ -12,7 +12,7 @@ public class Main {
 
     public static boolean use_minotaur(){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Should the minotaur stalk the maze? (y/n) ");
+        //System.out.println("Should the minotaur stalk the maze? (y/n) ");
         String input_string = sc.next();
         return(input_string.equals("y"));
     }

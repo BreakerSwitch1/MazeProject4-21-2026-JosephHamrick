@@ -10,23 +10,27 @@ public class MazeReader {
             while(sc.hasNextLine()){
                 String[] tokens = sc.nextLine().split(",");
                 spaces = new Space[tokens.length];
+                for(int j = 0; j<1; j++){
+                    System.out.println("");
+                }
                 for(int i = 0; i<tokens.length; i++){
                     if(tokens[i].equals("X")){
-                        System.out.println("Wall");
+                        System.out.print("X");
                     }else{
                         if(tokens[i].equals("O")){
-                            System.out.println("Space");
+                            System.out.print("O");
                         }else{
                             if(tokens[i].equals("E")){
-                                System.out.println("Exit");
+                                System.out.print("E");
                             }else{
                                 if(tokens[i].equals("S")){
-                                    System.out.println("Start");
+                                    System.out.print("S");
                                 }
                             }
                         }
                     }
                 }
+
             }
         }catch (java.io.FileNotFoundException ex){}
     }
