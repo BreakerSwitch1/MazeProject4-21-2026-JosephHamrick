@@ -6,4 +6,9 @@ public class Maze {
     int getSize_x(){return size_x;}
     int getSize_y(){return size_y;}
 
+    public void setup(boolean minotaur_active){
+        if(minotaur_active == true){
+            Minotaur mn = new Minotaur(1,10);
+        }
+    }
 }
