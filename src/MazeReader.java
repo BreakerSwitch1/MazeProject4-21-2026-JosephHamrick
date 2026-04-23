@@ -31,3 +31,13 @@ public class MazeReader {
         }catch (java.io.FileNotFoundException ex){}
     }
 }
+
+
+class GridID extends SpaceID{
+    public int[] coordinates = new int[2];
+
+    GridID(int i, int j){
+        coordinates[0] = i;
+        coordinates[1] = j;
+    }
+}
