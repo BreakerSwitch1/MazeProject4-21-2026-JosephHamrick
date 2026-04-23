@@ -9,12 +9,14 @@ public class MazeReader {
         try{
             File file = new File("Mazes/Maze1");
             Scanner sc = new Scanner(file);
+            rows = 0;
             while(sc.hasNextLine()){
                 String[] tokens = sc.nextLine().split(",");
                 spaces = new Space[tokens.length];
-                for(int j = 0; j<1; j++){
-                    System.out.println("");
+                for(int j = 0; j<=tokens.length; j++){
+                    collums = j;
                 }
+                System.out.println("");
                 for(int i = 0; i<tokens.length; i++){
                     if(tokens[i].equals("X")){
                         System.out.print("X");
@@ -31,8 +33,9 @@ public class MazeReader {
                             }
                         }
                     }
-                }collums++;
-
+                }
+                rows++;
+                GridID gid = new GridID(rows, collums);
             }
         }catch (java.io.FileNotFoundException ex){}
     }
