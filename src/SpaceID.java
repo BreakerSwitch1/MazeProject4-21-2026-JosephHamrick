@@ -2,7 +2,7 @@ public class SpaceID {
 
     public int id;
 
-    public Boolean isConnected(GridID nextSpace){
+    public Boolean isConnected(SpaceID nextSpace){
         return false;
     }
 

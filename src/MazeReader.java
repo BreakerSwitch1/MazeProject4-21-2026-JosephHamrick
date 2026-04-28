@@ -5,10 +5,10 @@ public class MazeReader {
     private Space[] spaces;
     private int rows;
 
-    public void read_file(){
+    public void read_file(String file_to_read){
 
         try{
-            File file = new File("Mazes/Maze1");
+            File file = new File(file_to_read);
             Scanner sc = new Scanner(file);
 
             //find how large of an array we need to store all spaces
@@ -16,7 +16,7 @@ public class MazeReader {
             while(sc.hasNextLine()){
                 String[] tokens = sc.nextLine().split(",");
                 for(int i = 0; i<tokens.length; i++){
-                    if(tokens[i].equals("O")){
+                    if(is_open_space(tokens,i)){
                         totalSpaces++;
                     }
                 }
@@ -29,7 +29,7 @@ public class MazeReader {
             while(sc.hasNextLine()){
                 String[] tokens = sc.nextLine().split(",");
                 for(int i = 0; i<tokens.length; i++){
-                    if(tokens[i].equals("O")){
+                    if(is_open_space(tokens,i)){
                         spaces[currentSpace] = new Space(new GridID(rows, i));
                         currentSpace++;
                     }
@@ -50,6 +50,21 @@ public class MazeReader {
             //return spaces;
 
         }catch (java.io.FileNotFoundException ex){}
+    }
+    public boolean is_open_space(String[] tokens, int index){
+        if(tokens[index].equals("O")){
+            return true;
+        }else{
+            if(tokens[index].equals("S")){
+                return true;
+            }
+            else{
+                if(tokens[index].equals("E")){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
 
