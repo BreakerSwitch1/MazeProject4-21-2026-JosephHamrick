@@ -1,6 +1,9 @@
 public class SpaceID {
-    public int rows;
-    public int cols;
 
-    int[][] id = new int[rows][cols];
+    public int id;
+
+    public Boolean isConnected(GridID nextSpace){
+        return false;
+    }
+
 }
