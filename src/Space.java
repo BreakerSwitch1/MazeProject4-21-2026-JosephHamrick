@@ -1,5 +1,7 @@
 public class Space {
-    public enum Type{open,wall,exit}
+    public enum Type{open,start,exit}
+    public Type spaceType;
+    public boolean has_visited = false;
     public SpaceID id;
     public Space[] connectedSpaces = new Space[4];
 
