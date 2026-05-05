@@ -30,7 +30,9 @@ public class MazeReader {
                 String[] tokens = sc.nextLine().split(",");
                 for(int i = 0; i<tokens.length; i++){
                     if(is_open_space(tokens,i)){
+                        //assignSpaceType(spaces[i], tokens, i);
                         spaces[currentSpace] = new Space(new GridID(rows, i));
+                        spaces[currentSpace].spaceType = assignSpaceType(tokens, i);
                         currentSpace++;
                     }
                 }
@@ -66,6 +68,18 @@ public class MazeReader {
         }
         return false;
     }
+    public Space.Type assignSpaceType(String[] tokens, int index){
+        if(tokens[index].equals("S")){
+            System.out.println("Start Found");
+            return Space.Type.start;
+        }
+        else if(tokens[index].equals("E")){
+            return Space.Type.exit;
+        }
+        else{
+            return Space.Type.open;
+        }
+    }
 }
 
 
@@ -92,4 +106,5 @@ class GridID extends SpaceID{
     public int getAbsDistance(int x, int y){
         return Math.abs(x - y);
     }
+
 }

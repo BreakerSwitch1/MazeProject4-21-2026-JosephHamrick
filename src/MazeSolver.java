@@ -6,7 +6,7 @@ public class MazeSolver {
     }
 
     public void solve(){
-        escapeFrom(start);
+        //escapeFrom(start);
     }
 
     private boolean escapeFrom(Space sp){
