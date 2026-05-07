@@ -5,7 +5,7 @@ public class MazeReader {
     private Space[] spaces;
     private int rows;
 
-    public void read_file(String file_to_read){
+    public Space[] read_file(String file_to_read){
 
         try{
             File file = new File(file_to_read);
@@ -49,9 +49,9 @@ public class MazeReader {
                 }
             }
 
-            //return spaces;
+            return spaces;
 
-        }catch (java.io.FileNotFoundException ex){}
+        }catch (java.io.FileNotFoundException ex){return null;}
     }
     public boolean is_open_space(String[] tokens, int index){
         if(tokens[index].equals("O")){
@@ -64,6 +64,11 @@ public class MazeReader {
                 if(tokens[index].equals("E")){
                     return true;
                 }
+                else{
+                    if(tokens[index].equals("M")){
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -75,6 +80,9 @@ public class MazeReader {
         }
         else if(tokens[index].equals("E")){
             return Space.Type.exit;
+        }
+        else if(tokens[index].equals("M")){
+            return Space.Type.minotaur_start;
         }
         else{
             return Space.Type.open;
@@ -91,7 +99,7 @@ class GridID extends SpaceID{
         coordinates[1] = j;
     }
 
-    public Boolean isConnected(GridID nextSpace){
+    public boolean isConnected(GridID nextSpace){
         if( getAbsDistance(this.coordinates[0], nextSpace.coordinates[0]) == 1 && getAbsDistance(this.coordinates[1], nextSpace.coordinates[1]) == 0){
             //nextSpace has a coordinate 1 apart in the i axis
             return true;

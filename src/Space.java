@@ -1,5 +1,5 @@
 public class Space {
-    public enum Type{open,start,exit}
+    public enum Type{open,start,exit, minotaur_start}
     public Type spaceType;
     public boolean has_visited = false;
     public SpaceID id;

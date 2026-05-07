@@ -4,10 +4,10 @@ public class Main {
     public static void main(String[] args) {
         MazeReader mr = new MazeReader();
         String maze_to_use = chose_maze();
-        mr.read_file(maze_to_use);
         mz = new Maze();
-        //boolean minotaur_stalks = use_minotaur();
-        mz.setup();
+        mz.setup(mr.read_file(maze_to_use));
+
+        mz.getMinotaur().moveMinotaur();
 
     }
 
